@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Book1",
+        "price": "21",
+        "image": "book cover.jpg"
+    },
+    {
+        "name": "Book2",
+        "id": 2,
+        "price": 15,
+        "image": "book cover.jpg"
+    },
+    {
+        "name": "Book3",
+        "id": 3,
+        "price": 16,
+        "image": "book cover.jpg"
+    },
+    {
+        "name": "Book4",
+        "id": 4,
+        "price": 17,
+        "image": "book cover.jpg"
+    }
+]

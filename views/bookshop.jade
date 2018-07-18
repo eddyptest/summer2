@@ -1,0 +1,13 @@
+extends layout
+block content
+    .row
+     
+     
+        .grid-container
+            each book in books
+              .item 
+                h1.itemtitle  #{book.name}
+                img.pimage(src='#{book.image}', alt='some image')  
+                p.itemp  €#{book.price}
+                a.button(href='show/#{book.name}') Show
+                a.button(href='/edit/#{book.name}') Edit

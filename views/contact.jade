@@ -1,0 +1,58 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    title title
+    link(rel='stylesheet', href='../app.css', type='text/css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', integrity='sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='#') Bookstore
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNavDropdown.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item.active
+            a.nav-link(href='#')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Buy
+          li.nav-item
+            a.nav-link(href='#') Contact
+          li.nav-item.dropdown
+            a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Dropdown link
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
+    br
+    br
+    br
+    br
+    br
+    br
+    #jumbo.jumbotron
+      h1
+        | Contact Form
+      .formHold
+        form#contact-form(action='/hello', method='post', role='form')
+          fieldset
+            label(for='name') Name *
+            input#name(name='name', type='text', placeholder='Your name', required='required')
+            label(for='email') Email *
+            input#email(name='email', type='text', placeholder='Your email', required='required')
+            label(for='message') Message *
+            textarea#message(name='message', placeholder='Enter your message here', rows='3', required='required')
+            input.btn.btn-primary(type='submit', value='Submit')
+            
+  .footer
+  
+    // Add font awesome icons
+    a.fa.fa-facebook(href='#')
+    a.fa.fa-twitter(href='#')
+    a.fa.fa-google(href='#')
+      

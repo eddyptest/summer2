@@ -1,0 +1,17 @@
+extends layout
+block content
+   .row
+   h1 welcome to edit book page <br><br>
+   .formhold
+     h1.itemtitle Edit Item <br><br>
+       each book in indOne
+         p Look at #{book.name}
+         form(method="post")
+            fieldset
+            label(for="newname") Product Name:
+            input(name="newname", type="text", value="#{book.name}")
+            label(for="newimage") Image:
+            input(name="newimage", type="text", value="#{book.image}")
+            lable(for="newprice") Item Price
+            input(name="newprice", type="text" value="#{book.price}")
+            button.button(type="submit") Update #{book.name}
