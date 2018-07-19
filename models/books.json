@@ -6,8 +6,7 @@
     },
     {
         "name": "Book2",
-        "id": 2,
-        "price": 15,
+        "price": "15",
         "image": "book cover.jpg"
     },
     {
