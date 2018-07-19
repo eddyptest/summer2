@@ -112,6 +112,22 @@ app.get('/createuserdb', function(req, res) {
   res.send("user created");
   });
 
+app.get('/insertuser', function(req, res) {
+
+let sql = 'INSERT INTO user (name, password) VALUES ("eddy2", "Password")'
+
+let query = db.query(sql, (err, res) => {
+
+if(err) throw err;
+
+console.log(res);
+
+});
+
+res.send("Well done liam...");
+
+});
+
 
 app.post('/login', function(req, res) {
   var whichOne = req.body.username;
