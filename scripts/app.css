@@ -1,82 +1,40 @@
+.navbar-custom {
+    /*background-color: #ff5500;*/
+    background-color: rgba(96, 85, 75, .7);
+}
 body {
-    background-color: #555;
-    background-image: url("/typewriter.jpg");
-    background-repeat:no-repeat;
-    background-size:100% 100%;
-    text-align: center;
-    min-height:900px; /* we will remove this later */
-}
-
-//newly added check
-
-/*body {
-    background-image: url("/typewriter.jpg");
+    background-image: url("personbook.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;*/
 }
-.navbar {
-    background-color: #373a48 !important;
-    /*background-color: rgba(191, 187, 63, 0.5);*/
-}
-
-/*.navbar-brand {
-    background-color: #373a48;
-}*/
-
-.navbar-header {
-    background-color: #373a48;
-}
-#navcolor {
-    background-color: #373a48;
-    height: 80px;
-}
-#navcolor2 {
-    background-color: #373a48;
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255, 255, 255, .7);
 }
 
-.welcome h1 {
-    margin-top: 145px;
-    padding-left: 280px;
-    padding-right: 220px;
-    padding-top: 200px;
-    padding-bottom: 50px;
-    font-size: 54px;
-    background-color: rgba(55, 58, 72, 0.6);
-    /*background-color: rgba(255, 0, 0, 0.3);*/
-}
-.welcome1 h1 {
-    margin-top: -10px;
-    padding-left: 220px;
-    padding-top: 0px;
-    padding-bottom: 100px;
-    margin-bottom: 50px;
-    font-size: 54px;
-    background-color: rgba(55, 58, 72, 0.6);
+/* change the link color */
+
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, .5);
 }
 
+/* change the color of active or hovered links */
 
-
-
-#jumbo {
-    
-    /* all other browsers */
-    background: rgba(191, 187, 63, 0.5);
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
 }
-
-
-
 
 .grid-container {
   display: grid;
   align-content: center;
   grid-template-columns: auto auto auto auto;
   grid-gap: 75px;
- /* background-color: #2196F3;  Comment this out later to remove the background color when not needed*/ 
+ /* background-color: #2196F3;  Comment this out later to remove the background color when not needed*/
   padding: 10px;
   margin-top: 185px;
   margin-left: 120px;
 }
-
 
 .item {
   background-color: rgba(255, 255, 255, 0.8);
@@ -85,14 +43,12 @@ body {
  
 }
 
-
 #itemsContainer {
     width: 100%;
     text-align: center;
     
     
 }
-
 
 .itemtitle {
    display: block;
@@ -104,12 +60,6 @@ body {
     
 }
 
-
-
-
-
-
-
 .itemp {
    display: block;
     color: #4CAF50;
@@ -119,8 +69,6 @@ body {
     font-size: 16px
     
 }
-
-
 
 .pimage {
     width: 30%; 
@@ -163,8 +111,6 @@ input[type=text], select{
   
 }
 
-
-
 .footer {
    position: fixed;
    left: 0;
@@ -175,7 +121,7 @@ input[type=text], select{
    text-align: center;
 }
 
-.fa {
+/*.fa {
   padding: 20px;
   font-size: 30px;
   width: 50px;
@@ -184,10 +130,9 @@ input[type=text], select{
   margin: 5px 2px;
 }
 
-.fa:hover {
+/*.fa:hover {
     opacity: 0.7;
 }
-
 .fa-facebook {
   background: #3B5998;
   color: white;
@@ -201,6 +146,10 @@ input[type=text], select{
 .fa-google {
   background: #dd4b39;
   color: white;
-}
+}*/
       
+
+
+
+
 

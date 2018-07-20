@@ -69,14 +69,27 @@ app.get('/login', function(req, res){
 
 
 //get function to render the contact failure page 
+app.get('/contact-success', function(req, res) {
+       res.render("contact-success");              
+       console.log("Contact success rendered");
+       });
+
+
 app.get('/contact-failure', function(req, res) {
        res.render("contact-failure");              
        console.log("Contact failure rendered");
        });
 
+
+
 app.get('/layout', function(req, res) {
        res.render("layout");              
        console.log("layout rendered");
+       });
+
+app.get('/layout2', function(req, res) {
+       res.render("layout2");              
+       console.log("layout2 rendered");
        });
 
 app.get('/contact', function(req, res) {
@@ -99,6 +112,64 @@ app.get('/bookshop' , function(req, res){
   
 })
 
+//add a book
+
+// Function to call the add product page
+
+app.get('/add-book', function(req, res){
+			 res.render("add-book");
+	     console.log("Ray wants this add page rendered");
+			 
+			 });
+
+
+// Function to create a new product
+
+app.post('/add-book', function(req, res){
+	var count = Object.keys(books).length; // Tells us how many products we have
+	console.log(count);
+	
+	// This will look for the current largest id
+	
+	function getMax(books , id) {
+		var max
+		for (var i=0; i<books.length; i++) {
+			if(!max || parseInt(books[i][id]) > parseInt(max[id]))
+				max = books[i];
+			
+		}
+		return max;
+	}
+	
+	var maxPpg = getMax(books, "id");
+	newId = maxPpg.id + 1;
+	console.log(newId);
+	
+	// create a new product based on what we have in our form on the add page 
+	
+	var book = {
+		name: req.body.name, 
+		id: newId, // this is the variable created above
+		activity: req.body.sport,
+		price: req.body.price,
+		image: req.body.image
+	};
+	
+	var json  = JSON.stringify(books); // Convert from object to string
+	
+	fs.readFile('./models/books.json', 'utf8', function readFileCallback(err, data){
+							if (err){
+		console.log("Something Went Wrong");
+	 }else {
+		books.push(book); // add the information from the above variable
+		json = JSON.stringify(books, null , 4); // converted back to JSON
+		fs.writeFile('./models/books.json', json, 'utf8'); // Write the file back
+		
+	}});
+	res.redirect("/bookshop")
+});
+
+
 
 
 //create user database in url
@@ -114,7 +185,7 @@ app.get('/createuserdb', function(req, res) {
 
 app.get('/insertuser', function(req, res) {
 
-let sql = 'INSERT INTO user (name, password) VALUES ("eddy2", "Password")'
+let sql = 'INSERT INTO user (name, password) VALUES ("eddy3", "Password")'
 
 let query = db.query(sql, (err, res) => {
 
@@ -262,16 +333,7 @@ app.post('/hello', function (req, res) {
   });
 });
 
-app.get('/contact-success', function(req, res) {
-       res.render("contact-success");              
-       console.log("Contact success rendered");
-       });
 
-
-app.get('/contact-failure', function(req, res) {
-       res.render("contact-failure");              
-       console.log("Contact failure rendered");
-       });
 
 
 
