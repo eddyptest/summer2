@@ -149,6 +149,102 @@ input[type=text], select{
   background: #dd4b39;
   color: white;
 }*/
+
+.price {
+  padding: 15px;
+  margin: 0 -15px;
+  border-top: 1px solid $light_gray;
+  overflow: auto;
+  span {
+    float: left;
+    font-weight: 700;
+    font-size: 1.3em;
+    color: $green;
+  }
+  .form-items {
+    float: right;
+  }
+}
+
+.form-items {
+  input {
+    font-family: inherit;
+    border: 1px solid $border_gray;
+  }
+  input[type=text] {
+    width: 24px;
+    margin-right: 5px;
+    text-align: center;
+    padding: 2px 6px;
+  }
+  input[type=button], input[type=submit] {
+    border-radius: 0;
+    background: $light_gray;
+    padding: 2px 6px;
+  }
+}
+
+.cart {
+  margin: 10px 10px -30px 10px;
+  max-height: 100%;
+  overflow: auto;
+  position: relative;
+  width: auto;
+  top: auto;
+  right: auto;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item {
+  display: block;
+  border-bottom: 1px solid $bg_gray;
+  padding: 4px 5px;
+  span {
+    padding: 0 5px;
+  }
+}
+
+.cart-item:last-child {
+  border: none;
+}
+
+.cart-top {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  background: $bg_gray;
+}
+
+.cart-bottom {
+  padding: 5px;
+  background: $bg_gray;
+  .button {
+    border: 1px solid $border_gray;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 3px 6px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.success {
+  border: rgba(114, 219, 10, 0.29) 1px solid;
+  padding: 15px;
+  color: $green;
+  margin: 15px 0;
+}
+
+@media (max-width: 992px) {
+  .item {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: calc(100% - 40px);
+  }
+}
       
 
 

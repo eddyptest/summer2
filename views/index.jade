@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    div(class='container')
+        h1= title
+        p Welcome to #{title}
+
+        if(cart_data && cart_data.length > 0)
+            div(class='cart')
+                div(class='cart-top') Cart
+                each cart_item in cart_data
+                    div(class='cart-item')
+                        span=cart_item.name
+                        span=cart[cart_item.id]
+                        - var value=(Math.round((cart[cart_item.id] * cart_item.price) * 100) / 100)
+                        - total = (total || 0) + value;
+                        span=currency + value
+                div(class='cart-bottom')
+                    a(class='button', href='/clear') Clear
+                    a(class='button', href='/checkout') Checkout
+                    b Total : #{currency + total}
+
+
+        div(class='items')
+            each item in data
+                div(class='item')
+                    h3=item.name
+                    p=item.description
+                    div(class='price')
+                        span=currency + item.price
+                        div(class='form-items')
+                            form(method='post')
+                                input(type='text', name='count', value='1')
+                                input(type='hidden', name='id', value='#{item.id}')
+                                input(type='submit', class='item-select', name='add', id='#{item.id}', value='Add to cart')
