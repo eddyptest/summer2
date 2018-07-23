@@ -20,6 +20,19 @@ body {
     color: rgba(255, 255, 255, .5);
 }
 
+#about {
+    background: url("persontypr.jpg") center center no-repeat;
+    background-size: cover;
+    padding-top: 210px;
+    padding-bottom: 230px;
+}
+
+.about-text {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1.87rem;
+}
+
 /* change the color of active or hovered links */
 
 .navbar-custom .nav-item.active .nav-link,
