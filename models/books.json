@@ -1,18 +1,13 @@
 [
-    {
-        "name": "neo",
-        "price": "50",
-        "image": "book cover.jpg"
-    },
+    
     {
         "name": "Book2",
-        "price": "20",
+        "price": "21",
         "image": "book cover.jpg"
     },
     {
         "name": "Book3",
-        "id": 3,
-        "price": 16,
+        "price": "18",
         "image": "book cover.jpg"
     },
     {
@@ -31,6 +26,11 @@
         "name": "caroline",
         "id": null,
         "price": "40",
+        "image": "book cover.jpg"
+    },
+    {
+        "name": "newbooks",
+        "price": "25",
         "image": "book cover.jpg"
     }
 ]
