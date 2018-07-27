@@ -102,6 +102,11 @@ app.get('/home', function(req, res) {
        console.log("home rendered");
        });
 
+app.get('/insertuser', function(req, res) {
+       res.render("register");              
+       console.log("register rendered");
+       });
+
 // This function calls the products page when somebody calls the products page
 app.get('/bookshop' , function(req, res){
   res.render("bookshop.jade", 
@@ -183,9 +188,9 @@ app.get('/createuserdb', function(req, res) {
   res.send("user created");
   });
 
-app.get('/insertuser', function(req, res) {
+app.post('/insertuser', function(req, res) {
 
-let sql = 'INSERT INTO user (name, password) VALUES ("eddy3", "Password")'
+let sql = 'INSERT INTO user (name, password) VALUES ("'+req.body.username+'", "'+req.body.password+'")';
 
 let query = db.query(sql, (err, res) => {
 
@@ -199,9 +204,54 @@ res.send("Well done liam...");
 
 });
 
+// SQL Select Example
+app.get('/select', function(req, res) {
+  var x12 = '"eddy"'
+  var x13 = "SELECT * FROM user WHERE Name LIKE " + x12
+  let sql = x13
+  let query = db.query(sql, (err, res1) => {
+    if(err) throw err;
+    console.log(res1);
+     res.send(res1);
+    
+  });
+ console.log("Simple SQL right!!!!")
+  console.log(x13)
+  });
+
 
 app.post('/login', function(req, res) {
-  var whichOne = req.body.username;
+  //var x12 = '"eddy"'
+  //var x13 = "SELECT * FROM user WHERE Name LIKE " + x12
+  //let sql = x13
+  var whichOne = req.body.username; //check for password
+  
+   let sql = 'SELECT password FROM user WHERE name= "'+whichOne+'"'
+  let query = db.query(sql, (err, res1) => {
+    if(err) {
+      //throw err;
+      res1.redirect("/login");
+    }else{
+     console.log(res1);
+      res1.redirect("/home");
+      
+    }
+    
+     //res.send(res1);
+    
+  });
+ console.log("Simple SQL right!!!!")
+  console.log(whichOne)
+  
+  res.redirect("/home");
+  
+  });
+
+
+
+
+app.post('/login2', function(req, res) {
+  var whichOne = req.body.username; //check for password
   
    let sql2 = 'SELECT password FROM user WHERE name= "'+whichOne+'"'
    let query = db.query(sql2, (err, res2) => {

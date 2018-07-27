@@ -1,3 +1,17 @@
+#panel,
+        #flip {
+            padding: 5px;
+            
+            
+            
+        }
+        
+        #panel {
+            padding: 30px;
+            display: none;
+        }
+
+
 .navbar-custom {
     /*background-color: #ff5500;*/
     background-color: rgba(96, 85, 75, .7);
@@ -24,7 +38,7 @@ body {
     background: url("persontypr.jpg") center center no-repeat;
     background-size: cover;
     padding-top: 210px;
-    padding-bottom: 230px;
+    padding-bottom: 390px;
 }
 
 .about-text {
@@ -124,10 +138,20 @@ input[type=text], select{
   box-sizing: border-box;
 }
 
+#jumbo h1{
+  text-align: center;
+}
+
+#jumbo{
+  background-color: rgba(255, 255,255, 0.6);
+}
+
 .formHold{
   border-radius: 5px;
-  background-color: rgba(255, 255,255, 0.6);
+  /*background-color: rgba(255, 255,255, 0.6);*/
+  background-color: rgba(96, 85, 75, .7);
   padding: 20px;
+  margin-left: 200px;
   width: 70%;
   
   

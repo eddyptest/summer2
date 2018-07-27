@@ -1,13 +1,12 @@
 [
-    
     {
         "name": "Book2",
         "price": "21",
         "image": "book cover.jpg"
     },
     {
-        "name": "Book3",
-        "price": "18",
+        "name": "anna clare",
+        "price": "20000",
         "image": "book cover.jpg"
     },
     {
@@ -31,6 +30,12 @@
     {
         "name": "newbooks",
         "price": "25",
+        "image": "book cover.jpg"
+    },
+    {
+        "name": "friday",
+        "id": null,
+        "price": "50",
         "image": "book cover.jpg"
     }
 ]
