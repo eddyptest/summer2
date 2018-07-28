@@ -34,6 +34,23 @@ body {
     color: rgba(255, 255, 255, .5);
 }
 
+#message_received {
+    background: url("mailbox.jpg") center center no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 500px;
+}
+.messageh1 {
+    color: white;
+    font-size: 40px;
+    margin-left: 330px;
+    margin-right: 330px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background: rgba(92, 99, 89, 0.8);
+    text-align: center;
+}
+
 #about {
     background: url("persontypr.jpg") center center no-repeat;
     background-size: cover;

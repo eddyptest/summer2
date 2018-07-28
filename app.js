@@ -1,6 +1,7 @@
 var express = require("express"); 
 var app = express();
 var session = require('express-session');
+var passport = require("passport");
 
 var http = require('http');
 var fs = require('fs');
@@ -198,26 +199,30 @@ if(err) throw err;
 
 console.log(res);
 
-});
 
-res.send("Well done liam...");
+});
+res.redirect("/login");
+
+//res.send("new user inserted to db");
+  
+
 
 });
 
 // SQL Select Example
-app.get('/select', function(req, res) {
-  var x12 = '"eddy"'
-  var x13 = "SELECT * FROM user WHERE Name LIKE " + x12
-  let sql = x13
-  let query = db.query(sql, (err, res1) => {
-    if(err) throw err;
-    console.log(res1);
-     res.send(res1);
+//app.get('/select', function(req, res) {
+  //var x12 = '"eddy"'
+  //var x13 = "SELECT * FROM user WHERE Name LIKE " + x12
+ // let sql = x13
+ // let query = db.query(sql, (err, res1) => {
+  //  if(err) throw err;
+   // console.log(res1);
+  //   res.send(res1);
     
-  });
- console.log("Simple SQL right!!!!")
-  console.log(x13)
-  });
+ // });
+// console.log("Simple SQL right!!!!")
+//  console.log(x13)
+//  });
 
 
 app.post('/login', function(req, res) {
@@ -228,24 +233,43 @@ app.post('/login', function(req, res) {
   
    let sql = 'SELECT password FROM user WHERE name= "'+whichOne+'"'
   let query = db.query(sql, (err, res1) => {
-    if(err) {
+    if(err) throw err;
+    console.log(res1);
+    
+    var passx= res1[0].password
+    console.log("You logged in with " + passx);
+    req.session.user = passx;
+  
+    if(passx == req.body.password){
+    console.log("Logged in with: " + passx);
+    
+   res.redirect("/home");
+   
+  }
+   //res.render("index.jade");
+    //res.render("showit.jade", {res1,res2});
+  });
+ 
+  });
+    //if(err) {
       //throw err;
-      res1.redirect("/login");
-    }else{
-     console.log(res1);
-      res1.redirect("/home");
+      //res1.redirect("/login");
+    //}else{
+    //var passx = res1[0].password //if passx = req.body.password set session  else redirect to login
+     //console.log(passx);
+      //res1.redirect("/home");
       
-    }
+    
     
      //res.send(res1);
     
-  });
- console.log("Simple SQL right!!!!")
-  console.log(whichOne)
+  //});
+ //console.log("Simple SQL right!!!!")
+  //console.log(whichOne)
   
-  res.redirect("/home");
+  //res.redirect("/home");
   
-  });
+ // });
 
 
 
