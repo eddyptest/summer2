@@ -53,39 +53,27 @@ app.get('/', function(req, res) {
   console.log("Landing page now rendered"); // the log function is used to output data to the terminal. 
   });
 
-//get function for login page rendering
+
+//get functions for all pages
 
 app.get('/landing', function(req, res){
 			 res.render("landing");
 	     console.log("landing page rendered");
-			 
 			 });
 
 app.get('/login', function(req, res){
 			 res.render("login");
 	     console.log("login page rendered");
-			 
 			 });
 
-
-
-//get function to render the contact failure page 
 app.get('/contact-success', function(req, res) {
        res.render("contact-success");              
        console.log("Contact success rendered");
        });
 
-
 app.get('/contact-failure', function(req, res) {
        res.render("contact-failure");              
        console.log("Contact failure rendered");
-       });
-
-
-
-app.get('/layout', function(req, res) {
-       res.render("layout");              
-       console.log("layout rendered");
        });
 
 app.get('/layout2', function(req, res) {
@@ -124,7 +112,7 @@ app.get('/bookshop' , function(req, res){
 
 app.get('/add-book', function(req, res){
 			 res.render("add-book");
-	     console.log("Ray wants this add page rendered");
+	     console.log("book add page");
 			 
 			 });
 
@@ -204,26 +192,11 @@ console.log(res);
 res.redirect("/login");
 
 //res.send("new user inserted to db");
-  
-
 
 });
 
-// SQL Select Example
-//app.get('/select', function(req, res) {
-  //var x12 = '"eddy"'
-  //var x13 = "SELECT * FROM user WHERE Name LIKE " + x12
- // let sql = x13
- // let query = db.query(sql, (err, res1) => {
-  //  if(err) throw err;
-   // console.log(res1);
-  //   res.send(res1);
-    
- // });
-// console.log("Simple SQL right!!!!")
-//  console.log(x13)
-//  });
 
+//log in code
 
 app.post('/login', function(req, res) {
   //var x12 = '"eddy"'
@@ -246,56 +219,12 @@ app.post('/login', function(req, res) {
    res.redirect("/home");
    
   }
-   //res.render("index.jade");
-    //res.render("showit.jade", {res1,res2});
+ 
   });
  
   });
-    //if(err) {
-      //throw err;
-      //res1.redirect("/login");
-    //}else{
-    //var passx = res1[0].password //if passx = req.body.password set session  else redirect to login
-     //console.log(passx);
-      //res1.redirect("/home");
-      
     
     
-     //res.send(res1);
-    
-  //});
- //console.log("Simple SQL right!!!!")
-  //console.log(whichOne)
-  
-  //res.redirect("/home");
-  
- // });
-
-
-
-
-app.post('/login2', function(req, res) {
-  var whichOne = req.body.username; //check for password
-  
-   let sql2 = 'SELECT password FROM user WHERE name= "'+whichOne+'"'
-   let query = db.query(sql2, (err, res2) => {
-    if(err) throw err;
-    console.log(res2);
-    
-    var passx= res2[0].password
-    console.log("You logged in with " + passx);
-    req.session.email = passx;
-  
-    if(passx == "Password"){
-    console.log("Logged in with: " + passx);
-    
-   res.redirect("/home");
-   
-  }
-   
-  });
- 
-  });
 
 
 
@@ -363,16 +292,7 @@ app.post('/edit/:name', function(req, res){
 			fs.writeFile('./models/books.json', json, 'utf8'); // Writing the data back to the file
 	
 	
-// 	fs.readFile('./model/products.json', 'utf8', function readFileCallback(err, data1){
-// 		if (err){
-// 			console.log("something Went Wrong");
-// 		} else {
-			
-			
-			
-// 		}
-		
-// 	})
+
 	res.redirect("/bookshop");
 });
 
@@ -406,21 +326,6 @@ app.post('/hello', function (req, res) {
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
