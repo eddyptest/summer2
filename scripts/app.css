@@ -1,3 +1,4 @@
+/* jquery effect on home page*/
 #panel,
         #flip {
             padding: 5px;
@@ -11,6 +12,7 @@
             display: none;
         }
 
+/*navbar code*/
 
 .navbar-custom {
     /*background-color: #ff5500;*/
@@ -34,6 +36,8 @@ body {
     color: rgba(255, 255, 255, .5);
 }
 
+/*contact message*/
+
 #message_received {
     background: url("mailbox.jpg") center center no-repeat;
     background-size: cover;
@@ -50,6 +54,8 @@ body {
     background: rgba(92, 99, 89, 0.8);
     text-align: center;
 }
+
+/*about page*/
 
 #about {
     background: url("persontypr.jpg") center center no-repeat;
@@ -70,6 +76,8 @@ body {
 .navbar-custom .nav-item:hover .nav-link {
     color: #ffffff;
 }
+
+/*google map API*/
 
 #map {
     height: 400px;
@@ -92,12 +100,13 @@ body {
   
 }
 
+/*book page*/
+
 .grid-container {
   display: grid;
   align-content: center;
   grid-template-columns: auto auto auto auto;
   grid-gap: 75px;
- /* background-color: #2196F3;  Comment this out later to remove the background color when not needed*/
   padding: 10px;
   margin-top: 185px;
   margin-left: 120px;
@@ -180,6 +189,8 @@ input[type=text], select{
 #jumbo{
   background-color: rgba(255, 255,255, 0.6);
   margin-top:100px;
+  margin-left: 200px;
+  margin-right: 280px;
 }
 
 .formHold{
@@ -188,21 +199,11 @@ input[type=text], select{
   background-color: rgba(96, 85, 75, .7);
   padding: 20px;
   margin-left: 200px;
-  width: 70%;
-  
-  
+  width: 70%;  
   
 }
 
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: rgba(191, 187, 63, 0.5);
-   color: white;
-   text-align: center;
-}
+
 
 
 

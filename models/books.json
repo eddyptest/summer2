@@ -1,7 +1,7 @@
 [
     {
         "name": "Wind in the willows",
-        "price": "35",
+        "price": "15",
         "image": "book cover.jpg"
     },
     {
@@ -36,6 +36,12 @@
         "name": "friday",
         "id": null,
         "price": "50",
+        "image": "book cover.jpg"
+    },
+    {
+        "name": "new12",
+        "id": null,
+        "price": "30",
         "image": "book cover.jpg"
     }
 ]
