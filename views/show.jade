@@ -1,8 +1,9 @@
 extends layout2
 block content
     .row
-      .p Hello welcome to the individual page
+      
             each book in indi
+             .ibook
               .item 
                 h1.itemtitle #{book.name}
                 img.pimage(src='../../#{book.image}', alt='some image')
